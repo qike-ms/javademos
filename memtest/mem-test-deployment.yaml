@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memtest
+  labels:
+    app: mem-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mem-test 
+  template:
+    metadata:
+      labels:
+        app: mem-test
+    spec:
+      containers:
+      - name: mem-test
+        image: qkeastus.azurecr.io/demo/mem-test:latest
+        imagePullPolicy: Always
+        env:
+        - name: JAVA_OPTS
+          value: "-Xmx2g -XX:+PrintGC"
+        - name: logLevel
+          value: FINE
