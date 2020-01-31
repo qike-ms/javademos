@@ -20,6 +20,13 @@ spec:
         imagePullPolicy: Always
         env:
         - name: JAVA_OPTS
-          value: "-Xmx2g -XX:+PrintGC"
+          value: "-Xmx200m -XX:+PrintGC"
         - name: logLevel
           value: FINE
+        resources:
+          requests:
+            memory: "250Mi"
+            cpu: "250m"
+          limits:
+            memory: "500Mi"
+            cpu: "500m"

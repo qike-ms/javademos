@@ -23,6 +23,8 @@ docker run --rm -e JAVA_OPTS='-Xmx200m -XX:+PrintGC' qkeastus.azurecr.io/demo/me
 
 ###### Live demo
 #### Cluster Overload issue on AKS:
+### Case 0:  Show availability zone support
+
 ### Case 1:  Resource limit too high
 k apply -f mem-test-deployment.yaml
 "-Xmx2g" and not set resources #  "2Gi"
